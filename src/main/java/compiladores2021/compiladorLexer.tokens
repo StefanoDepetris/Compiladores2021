@@ -1,0 +1,13 @@
+PA=1
+PC=2
+IGUAL=3
+DIGITO=4
+PCOMA=5
+TIPO_DATO=6
+COMA=7
+ID=8
+'('=1
+')'=2
+'='=3
+';'=5
+','=7

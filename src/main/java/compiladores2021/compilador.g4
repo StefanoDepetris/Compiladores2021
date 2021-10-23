@@ -3,16 +3,16 @@ grammar compilador;
 @header{ 
 package compiladores2021;
 }
-
+ 
  PA: '(';
- PC: ')';
+ PC: ')'; 
  LA: '{';
  LC: '}';
  I_WHILE: 'while';
  FOR:'for';
  IF: 'if';
  ELSE: 'else';
- ELSEIF: 'else if';
+ ELSEIF: 'else if'; 
  AND: '&&';
  OR:  '||';
  IGUAL: '='; 
@@ -25,10 +25,11 @@ package compiladores2021;
 
 //  ENTERO: '-'[0-9]+ | [0-9]+;  5 + (7-2) * 3
  ENTERO:  [0-9]+; 
- PCOMA: ';';
+ PCOMA:
+  ';'; 
  TIPO_DATO: 'int' | 'double'| 'char';
  COMA: ',';
- ID: [a-zA-Z_] [a-zA-Z0-9_]*;
+ ID: [a-zA-Z_] [a-zA-Z0-9_]*; 
 
 i_if:  IF PA ladoA signosdecomparacion ladoB PC bloque i_if 
     | ELSEIF PA ladoA signosdecomparacion ladoB PC bloque i_if
@@ -74,7 +75,7 @@ estructuradecontrol: i_while
 i_for: FOR PA secvar PCOMA ladoA signosdecomparacion ladoB PCOMA secvar PC  bloque ;       
     
 declaracion: TIPO_DATO secvar PCOMA {System.out.println("Encontrado");}
-|  secvar PCOMA {System.out.println("Encontrado");}
+|  secvar PCOMA //{System.out.println("Encontrado");}
            ;  
 secvar: ladoA IGUAL ladoB COMA  secvar  //para ahcer int a,b,c;
       | ladoA IGUAL ladoB
@@ -85,8 +86,8 @@ secvar: ladoA IGUAL ladoB COMA  secvar  //para ahcer int a,b,c;
 oal: term t ;
 term: factores f //Un termino puede ser un factor o un conjunto de suma y restas
     ;
-t: SUMA term t
- | RESTA term t
+t: SUMA term t 
+ | RESTA term t   
  |
  ;
 

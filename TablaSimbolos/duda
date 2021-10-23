@@ -1,0 +1,19 @@
+
+EN UNA CONTEXTO:
+
+    Id id= new Variable("Id",TipoDato.STRING); // Como si fuera String id; 
+    id.setInicializado();                      Inicializo
+    tabla.agregarAlContextoActual(id);        
+
+ENTRO A OTRO CONTEXTO:
+                                             
+    tabla.fijarmeSiestaInicializado(id);       ME TIRA TRUE PORQUE LA INICILIACE
+
+    Id id1= new Variable("Id",TipoDato.STRING); // Como si fuera String id;    OTRA VEZ SE LLAMA id
+    tabla.fijarmeSiestaInicializado(id1);       ME TIRA FALSE PORQUE LA INICILIACE
+
+
+    LA DUDA: YO ENTIENDO id  COMO UN LUGAR DE MEMORIA DONDE EL 1ER PARAMETRO ES EL NOMBRE DE LA VARAIBLE 
+    O FUNCION Y EL SEGUNDO ES LO QUE RETORNA
+
+    MI PREGUNTA ES QUE ME IMPIDE QUE YO AGREGUE id y id1 al mismo contexto (tienen el mismo nombre)
